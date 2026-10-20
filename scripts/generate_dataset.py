@@ -26,6 +26,14 @@ import numpy as np
 from PIL import Image
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+
+def _rel(path) -> str:
+    path = Path(path)
+    try:
+        return str(path.resolve().relative_to(REPO_ROOT))
+    except ValueError:
+        return path.name
+
 sys.path.insert(0, str(REPO_ROOT / "src"))
 
 from so101_dataset import LeRobotDatasetWriter  # noqa: E402
