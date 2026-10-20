@@ -1,12 +1,12 @@
 # 数据集格式（LeRobot v3 子集）
 
-本项目**没有**依赖 `lerobot` 包（2 核 CPU 上装官方包依赖过重），而是按
-LeRobot v3 的目录约定与字段命名实现了自己的 writer / reader。本文档说明：
+没有依赖 `lerobot` 包（官方包的依赖在纯 CPU 环境里太重），而是按 LeRobot v3 的
+目录约定和字段命名自己写了 writer / reader。这篇说明四件事：
 
-1. 实际写出的磁盘布局；
-2. 与官方 LeRobot v3 的对应关系；
-3. 子集差异（哪些字段有、哪些没有）；
-4. 如何验证一个数据集。
+1. 实际写到磁盘上的布局；
+2. 和官方 LeRobot v3 的对应关系；
+3. 子集差在哪（哪些字段有、哪些没有）；
+4. 怎么验证一个数据集。
 
 ## 1. 磁盘布局
 
@@ -87,7 +87,7 @@ data/demos_act/
 
 | 项目 | 官方 LeRobot v3 | 本仓库 | 影响 |
 | --- | --- | --- | --- |
-| 包依赖 | 依赖 `lerobot` / `datasets` / `torchcodec` 等 | 只用 numpy / pyarrow / imageio | 轻量、可在 2 核 CPU 跑通；不能直接 `lerobot` 训练 |
+| 包依赖 | 依赖 `lerobot` / `datasets` / `torchcodec` 等 | 只用 numpy / pyarrow / imageio | 轻量、纯 CPU 环境能跑通；不能直接用 `lerobot` 训练 |
 | 数据文件 | v3 会把多个 episode 打包进 `file_000.parquet` 并通过 `data/chunk_index`、`file_index` 索引 | 每 episode 一个 `episode_XXXXXX.parquet` | 沿用 v2 风格文件粒度；`info.json` 的 `data_path` 仍是 v3 模板，读代码按 episode 编号定位 |
 | 视频元数据 | `meta/episodes.jsonl` 含 `videos/<key>/chunk_index`、`file_index`、`from_timestamp` 等 | 只写 `length` / `tasks` / `dataset_from_index` / `dataset_to_index` | 官方工具若严格校验会缺字段 |
 | 统计量 | `stats.json` 支持 `count/mean/std/min/max` 的完整形状 | state/action 为逐维 6 值；图像为逐通道 3 值 | 用于脚本内归一化；非官方完整格式 |
