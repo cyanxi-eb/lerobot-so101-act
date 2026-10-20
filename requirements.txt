@@ -1,0 +1,9 @@
+# CPU PyTorch (install separately, see README quick start):
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+numpy>=1.26
+pillow>=10.0
+pyarrow>=14.0
+imageio>=2.34
+imageio-ffmpeg>=0.5
+matplotlib>=3.8
+pytest>=8.0
