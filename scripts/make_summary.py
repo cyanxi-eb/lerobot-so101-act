@@ -40,7 +40,7 @@ def split_row(name: str, split: dict | None) -> str:
 def main() -> int:
     dataset_act = read("dataset_act.json")
     dataset_lang = read("dataset_lang.json")
-    train_act = read("train_act.json") or read("train_act_finetune.json") or read("train_act_stage2.json")
+    train_act = read("train_act.json")
     train_lang = read("train_lang.json")
     eval_act = read("eval_act.json")
     eval_lang = read("eval_lang.json")

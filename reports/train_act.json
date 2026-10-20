@@ -372,5 +372,6 @@
       },
       "wrong_object_in_box": 0
     }
-  ]
+  ],
+  "report": "reports/train_act.json"
 }
