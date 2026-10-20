@@ -1,8 +1,7 @@
 # 实测结果汇总
 
-- 生成时间：2026-10-20T20:33:10
-- 环境：CPU only (2 physical cores / 4 logical threads)，torch threads=4
-- 全部为仿真闭环 rollout 实测值；**无真机实验**。
+- 环境：CPU（无 GPU）。
+- 全部为仿真闭环 rollout 实测值；无真机实验。
 
 ## 数据集
 
@@ -48,6 +47,6 @@
 ## 报告文件
 
 - `reports/eval_act.md` / `reports/eval_lang.md`：完整评测报告（含失败拼图）
-- `reports/train_act_finetune.json` / `reports/train_lang.json`：训练日志
+- `reports/train_act.json` / `reports/train_lang.json`：训练日志
 - `reports/dataset_act.json` / `reports/dataset_lang.json`：数据集统计
 - `reports/eval_act_failures.png`：失败案例画面

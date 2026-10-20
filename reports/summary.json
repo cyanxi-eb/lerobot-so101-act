@@ -1,8 +1,6 @@
 {
-  "generated_at": "2026-10-20T20:33:10",
   "environment": {
-    "device": "CPU only (2 physical cores / 4 logical threads)",
-    "torch_threads": 4,
+    "device": "CPU only (no GPU)",
     "simulator": "so101_sim (kinematic, no physics engine)",
     "image_size_dataset": 96,
     "image_size_policy": 64

@@ -141,8 +141,7 @@ def main() -> int:
     out.mkdir(parents=True, exist_ok=True)
     env = GraspEnv(EnvConfig(max_steps=60, image_size=96))
     manifest_path = out / "demos.json"
-    manifest = {"generated_at": __import__("datetime").datetime.now().isoformat(
-        timespec="seconds"), "demos": {}}
+    manifest = {"demos": {}}
     if manifest_path.exists():
         try:
             import json as _json

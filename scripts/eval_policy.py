@@ -83,7 +83,7 @@ def _rel(path) -> str:
     """Return a repo-relative path when possible (reports must not leak the host path)."""
     path = Path(path)
     try:
-        return str(path.resolve().relative_to(REPO_ROOT))
+        return path.resolve().relative_to(REPO_ROOT).as_posix()
     except ValueError:
         return path.name
 
@@ -137,7 +137,6 @@ def main() -> int:
           f"{ckpt['bytes']/1e6:.2f} MB", flush=True)
 
     report: dict = {
-        "generated_at": datetime.now().isoformat(timespec="seconds"),
         "policy": args.policy,
         "policy_type": ckpt["policy_type"],
         "checkpoint": ckpt,
@@ -235,8 +234,7 @@ def render_markdown(report: dict) -> str:
     lines = [
         f"# Evaluation - {report['policy']} policy",
         "",
-        f"- Generated: {report['generated_at']}",
-        f"- Checkpoint: `{report['checkpoint']['path']}` "
+        f"- Checkpoint: `{report['checkpoint']['path'].replace(chr(92), '/')}` "
         f"({report['checkpoint']['bytes'] / 1e6:.2f} MB, "
         f"{report['checkpoint']['n_parameters'] / 1e6:.2f}M parameters)",
         f"- Control: {report['protocol']['control_hz']} Hz, "

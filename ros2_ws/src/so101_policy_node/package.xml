@@ -9,7 +9,7 @@
     trained in this repository. Written for ROS2 Jazzy but never executed on
     the development machine (no ROS2 installation, no hardware).
   </description>
-  <maintainer email="cyanxi-eb@users.noreply.github.com">chenyanxi</maintainer>
+  <maintainer email="cyanxi-eb@users.noreply.github.com">cyanxi-eb</maintainer>
   <license>MIT</license>
 
   <exec_depend>rclpy</exec_depend>

@@ -1,7 +1,6 @@
 # Evaluation - lang policy
 
-- Generated: 2026-10-20T20:27:46
-- Checkpoint: `checkpoints\lang_cond.pt` (1.66 MB, 0.41M parameters)
+- Checkpoint: `checkpoints/lang_cond.pt` (1.66 MB, 0.41M parameters)
 - Control: 7.5 Hz, max 60 steps (8.0 s), replan every 3 steps
 - Success: the instructed block ends inside the box after release
 

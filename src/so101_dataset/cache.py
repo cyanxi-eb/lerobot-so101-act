@@ -1,7 +1,7 @@
 """Training cache: decoded, resized observations + action chunks.
 
 The dataset stores 96x96 videos (nice for humans / demos).  Policy training
-uses 64x64 images because the whole project must train on a 2-core CPU.  This
+uses 64x64 images because the whole project must train on a CPU-only budget.  This
 module reads the dataset once, decodes + resizes every frame, builds padded
 action-chunk targets and normalisation statistics, and writes a single
 ``.npz`` cache that training / evaluation can load in a second.

@@ -9,7 +9,7 @@ description = "LeRobot-v3-style dataset pipeline, ACT and lightweight language-c
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "陈彦希" }]
+authors = [{ name = "cyanxi-eb" }]
 keywords = ["imitation-learning", "act", "lerobot", "so-101", "vla", "robotics"]
 classifiers = [
   "Programming Language :: Python :: 3",

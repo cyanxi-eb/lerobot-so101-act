@@ -1,7 +1,6 @@
 # Evaluation - act policy
 
-- Generated: 2026-10-20T20:30:26
-- Checkpoint: `checkpoints\act.pt` (2.76 MB, 0.68M parameters)
+- Checkpoint: `checkpoints/act.pt` (2.76 MB, 0.68M parameters)
 - Control: 7.5 Hz, max 60 steps (8.0 s), replan every 3 steps
 - Success: the instructed block ends inside the box after release
 

@@ -10,7 +10,7 @@ rendered:
   with a small mounting offset jitter.
 
 Both produce 96x96 RGB uint8 images, which is small enough to train a policy
-on a 2-core CPU but still contains colour, depth ordering and occlusion cues.
+on a CPU-only budget but still contains colour, depth ordering and occlusion cues.
 
 Static scenery (table background, grid, contact shadows) is rendered once per
 episode and cached, and back faces are culled, which keeps a full 60-step

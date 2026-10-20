@@ -10,7 +10,6 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import datetime
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -46,10 +45,8 @@ def main() -> int:
     eval_lang = read("eval_lang.json")
 
     summary: dict = {
-        "generated_at": datetime.now().isoformat(timespec="seconds"),
         "environment": {
-            "device": "CPU only (2 physical cores / 4 logical threads)",
-            "torch_threads": (train_act or {}).get("torch_threads"),
+            "device": "CPU only (no GPU)",
             "simulator": "so101_sim (kinematic, no physics engine)",
             "image_size_dataset": 96,
             "image_size_policy": 64,
@@ -101,10 +98,8 @@ def main() -> int:
     lines = [
         "# 实测结果汇总",
         "",
-        f"- 生成时间：{summary['generated_at']}",
-        f"- 环境：{summary['environment']['device']}，"
-        f"torch threads={summary['environment']['torch_threads']}",
-        "- 全部为仿真闭环 rollout 实测值；**无真机实验**。",
+        "- 环境：CPU（无 GPU）。",
+        "- 全部为仿真闭环 rollout 实测值；无真机实验。",
         "",
         "## 数据集",
         "",
@@ -140,8 +135,7 @@ def main() -> int:
         "",
         "> ACT 训练因 CPU 吞吐受限分 3 段续训，合计约 65 min；上表 20.3 min 是",
         "> 最后一段（10 epoch）的耗时，前两段见 `reports/train_act.json` 的说明与",
-        "> `docs/evaluation.md` §3.3。语言条件策略为单段 18.0 min。",
-    ]
+        "> `docs/evaluation.md` §3.3。语言条件策略为单段 18.0 min。",    ]
     lines += [
         "",
         "## 评测（真实闭环，20 trials / split）",
@@ -178,7 +172,7 @@ def main() -> int:
         "## 报告文件",
         "",
         "- `reports/eval_act.md` / `reports/eval_lang.md`：完整评测报告（含失败拼图）",
-        "- `reports/train_act_finetune.json` / `reports/train_lang.json`：训练日志",
+        "- `reports/train_act.json` / `reports/train_lang.json`：训练日志",
         "- `reports/dataset_act.json` / `reports/dataset_lang.json`：数据集统计",
         "- `reports/eval_act_failures.png`：失败案例画面",
         "",

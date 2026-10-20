@@ -13,7 +13,7 @@ setup(
     ],
     install_requires=["setuptools"],
     zip_safe=True,
-    maintainer="chenyanxi",
+    maintainer="cyanxi-eb",
     maintainer_email="cyanxi-eb@users.noreply.github.com",
     description="ROS2 deployment skeleton for the SO-101 imitation-learning policies",
     license="MIT",

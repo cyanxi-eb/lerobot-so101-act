@@ -2,7 +2,7 @@
 
 This is *not* SmolVLA.  SmolVLA is a pretrained 450M-parameter VLA.  This
 module implements the same high-level idea at a size that trains from scratch
-on a 2-core CPU:
+on a CPU-only budget:
 
 * the same small CNN vision backbone as the ACT policy,
 * a small trainable **character-level** token embedding (works for Chinese

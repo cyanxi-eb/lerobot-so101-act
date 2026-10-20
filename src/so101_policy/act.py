@@ -15,7 +15,7 @@ It is *not* the official LeRobot implementation: the encoder/decoder are
 single-stack transformers with a learned readout token instead of ACT's
 cross-attention decoder.  The essential ingredients (action chunking, CVAE
 latent, visual backbone) are kept, and the parameter count is small enough to
-train on a 2-core CPU.
+train on a CPU-only budget.
 """
 
 from __future__ import annotations
