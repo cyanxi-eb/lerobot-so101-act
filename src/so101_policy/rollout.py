@@ -34,13 +34,20 @@ def run_rollout(policy, env: GraspEnv, seed: int, split: str = "seen",
                 n_blocks: int = 1, target_color: str | None = None,
                 replan_interval: int = 5, max_steps: int | None = None,
                 instruction: str | None = None, capture_frames: bool = False,
-                capture_last: bool = False) -> dict:
-    """Run one closed-loop episode. ``policy`` must expose ``.act(obs)``."""
+                capture_last: bool = False, ensemble_decay: float = 0.0) -> dict:
+    """Run one closed-loop episode. ``policy`` must expose ``.act(obs)``.
+
+    ``ensemble_decay > 0`` enables ACT-style temporal ensembling: every
+    prediction for an absolute future step is stored with weight
+    ``exp(-decay * age)`` and the executed action is the weighted average of
+    all predictions that cover the current step.
+    """
     obs = env.reset(seed=seed, split=split, n_blocks=n_blocks,
                     target_color=target_color)
     max_steps = int(max_steps or env.config.max_steps)
     wall_started = time.perf_counter()
     chunk: np.ndarray | None = None
+    buffer: dict[int, list[tuple[float, np.ndarray]]] = {}
     latencies: list[float] = []
     frames: list[dict] = []
     steps = 0
@@ -53,7 +60,17 @@ def run_rollout(policy, env: GraspEnv, seed: int, split: str = "seen",
             started = time.perf_counter()
             chunk = policy.act(obs, instruction=instruction if instruction else obs["instruction"])
             latencies.append((time.perf_counter() - started) * 1000.0)
-        action = chunk[min(steps % replan_interval, chunk.shape[0] - 1)]
+            if ensemble_decay > 0:
+                for offset, predicted in enumerate(chunk):
+                    weight = np.exp(-ensemble_decay * offset)
+                    buffer.setdefault(steps + offset, []).append(
+                        (float(weight), np.asarray(predicted, dtype=np.float64)))
+        if ensemble_decay > 0 and buffer.get(steps):
+            entries = buffer[steps]
+            total = sum(weight for weight, _ in entries)
+            action = sum(weight * value for weight, value in entries) / max(total, 1e-9)
+        else:
+            action = chunk[min(steps % replan_interval, chunk.shape[0] - 1)]
         obs, _, done, info = env.step(action)
         steps += 1
         if capture_frames:

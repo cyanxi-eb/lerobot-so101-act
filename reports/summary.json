@@ -1,0 +1,291 @@
+{
+  "generated_at": "2026-10-20T20:33:10",
+  "environment": {
+    "device": "CPU only (2 physical cores / 4 logical threads)",
+    "torch_threads": 4,
+    "simulator": "so101_sim (kinematic, no physics engine)",
+    "image_size_dataset": 96,
+    "image_size_policy": 64
+  },
+  "datasets": {
+    "act": {
+      "episodes": 80,
+      "frames": 4800,
+      "episode_length": 60,
+      "fps": 7.5,
+      "cycle_seconds": 8.0,
+      "target_color_counts": {
+        "green": 25,
+        "red": 26,
+        "blue": 29
+      },
+      "expert_success_rate": 0.9877,
+      "dataset_mb": 2.64,
+      "generation_seconds": 136.85
+    },
+    "lang": {
+      "episodes": 80,
+      "frames": 4800,
+      "episode_length": 60,
+      "fps": 7.5,
+      "cycle_seconds": 8.0,
+      "target_color_counts": {
+        "red": 27,
+        "blue": 27,
+        "green": 26
+      },
+      "expert_success_rate": 0.9877,
+      "dataset_mb": 2.93,
+      "generation_seconds": 165.13
+    }
+  },
+  "act_training": {
+    "train_minutes": 20.32,
+    "epochs_done": 10,
+    "best_epoch": 8,
+    "best_success_rate": 0.5,
+    "best_val_l1": 0.13334,
+    "parameter_count": 680664,
+    "checkpoint_bytes": 2757813,
+    "steps_per_second": 1.107,
+    "total_steps": 1350
+  },
+  "lang_training": {
+    "train_minutes": 18.03,
+    "epochs_done": 10,
+    "best_epoch": 9,
+    "best_success_rate": 0.1667,
+    "best_val_l1": 0.14308,
+    "parameter_count": 408792,
+    "checkpoint_bytes": 1660781,
+    "steps_per_second": 1.248,
+    "total_steps": 1350,
+    "vocab_size": 14
+  },
+  "act_eval": {
+    "checkpoint_bytes": 2757813,
+    "n_parameters": 680664,
+    "replan_interval": 3,
+    "splits": {
+      "seen": {
+        "trials": 20,
+        "successes": 10,
+        "success_rate": 0.5,
+        "failures": {
+          "slip": 1,
+          "grasp_miss": 9
+        },
+        "grasp_trials": 11,
+        "grounded_grasps": 11,
+        "grounding_accuracy": 1.0,
+        "cycle_seconds_mean": 7.413,
+        "cycle_seconds_min": 5.6,
+        "cycle_seconds_max": 8.0,
+        "wall_seconds_mean": 0.965,
+        "wall_seconds_min": 0.586,
+        "wall_seconds_max": 1.621,
+        "latency_ms_mean": 15.276,
+        "latency_ms_p50": 11.245,
+        "latency_ms_p95": 38.796,
+        "by_color": {
+          "red": {
+            "trials": 9,
+            "success": 4
+          },
+          "blue": {
+            "trials": 4,
+            "success": 2
+          },
+          "green": {
+            "trials": 7,
+            "success": 4
+          }
+        },
+        "wrong_object_in_box": 0
+      },
+      "unseen": {
+        "trials": 20,
+        "successes": 2,
+        "success_rate": 0.1,
+        "failures": {
+          "grasp_miss": 18
+        },
+        "grasp_trials": 2,
+        "grounded_grasps": 2,
+        "grounding_accuracy": 1.0,
+        "cycle_seconds_mean": 7.927,
+        "cycle_seconds_min": 6.933,
+        "cycle_seconds_max": 8.0,
+        "wall_seconds_mean": 0.834,
+        "wall_seconds_min": 0.596,
+        "wall_seconds_max": 1.326,
+        "latency_ms_mean": 12.425,
+        "latency_ms_p50": 8.137,
+        "latency_ms_p95": 24.546,
+        "by_color": {
+          "purple": {
+            "trials": 15,
+            "success": 0
+          },
+          "yellow": {
+            "trials": 5,
+            "success": 2
+          }
+        },
+        "wrong_object_in_box": 0
+      }
+    },
+    "failure_mode_counts": {
+      "slip": 1,
+      "grasp_miss": 27
+    },
+    "failure_cases": [
+      {
+        "seed": 3000,
+        "split": "seen",
+        "failure": "slip",
+        "target_color": "red",
+        "target_size": 0.0178,
+        "has_occluder": false,
+        "release_error_m": null,
+        "wrong_object_in_box": false,
+        "description": "seed 3000, failure=slip, target=red (half-size 0.0178 m), occluder=False, steps=60"
+      },
+      {
+        "seed": 3001,
+        "split": "seen",
+        "failure": "grasp_miss",
+        "target_color": "red",
+        "target_size": 0.0212,
+        "has_occluder": true,
+        "release_error_m": null,
+        "wrong_object_in_box": false,
+        "description": "seed 3001, failure=grasp_miss, target=red (half-size 0.0212 m), occluder=True, steps=60"
+      },
+      {
+        "seed": 3002,
+        "split": "seen",
+        "failure": "grasp_miss",
+        "target_color": "blue",
+        "target_size": 0.0199,
+        "has_occluder": true,
+        "release_error_m": null,
+        "wrong_object_in_box": false,
+        "description": "seed 3002, failure=grasp_miss, target=blue (half-size 0.0199 m), occluder=True, steps=60"
+      },
+      {
+        "seed": 3004,
+        "split": "seen",
+        "failure": "grasp_miss",
+        "target_color": "red",
+        "target_size": 0.0217,
+        "has_occluder": true,
+        "release_error_m": null,
+        "wrong_object_in_box": false,
+        "description": "seed 3004, failure=grasp_miss, target=red (half-size 0.0217 m), occluder=True, steps=60"
+      },
+      {
+        "seed": 3005,
+        "split": "seen",
+        "failure": "grasp_miss",
+        "target_color": "blue",
+        "target_size": 0.0206,
+        "has_occluder": true,
+        "release_error_m": null,
+        "wrong_object_in_box": false,
+        "description": "seed 3005, failure=grasp_miss, target=blue (half-size 0.0206 m), occluder=True, steps=60"
+      }
+    ]
+  },
+  "lang_eval": {
+    "checkpoint_bytes": 1660781,
+    "n_parameters": 408792,
+    "replan_interval": 3,
+    "splits": {
+      "lang": {
+        "trials": 20,
+        "successes": 3,
+        "success_rate": 0.15,
+        "failures": {
+          "grasp_miss": 16,
+          "slip": 1
+        },
+        "grasp_trials": 4,
+        "grounded_grasps": 4,
+        "grounding_accuracy": 1.0,
+        "cycle_seconds_mean": 7.867,
+        "cycle_seconds_min": 6.933,
+        "cycle_seconds_max": 8.0,
+        "wall_seconds_mean": 1.274,
+        "wall_seconds_min": 0.673,
+        "wall_seconds_max": 2.68,
+        "latency_ms_mean": 20.93,
+        "latency_ms_p50": 15.062,
+        "latency_ms_p95": 51.355,
+        "by_color": {
+          "red": {
+            "trials": 7,
+            "success": 1
+          },
+          "blue": {
+            "trials": 7,
+            "success": 2
+          },
+          "green": {
+            "trials": 6,
+            "success": 0
+          }
+        },
+        "wrong_object_in_box": 2,
+        "instruction_accuracy": 0.15,
+        "wrong_object_rate": 0.1
+      }
+    },
+    "failure_mode_counts": {
+      "grasp_miss": 16,
+      "slip": 1
+    },
+    "failure_cases": [
+      {
+        "seed": 3200,
+        "failure": "grasp_miss",
+        "instruction": "把红色积木放进盒子里",
+        "target_color": "red",
+        "wrong_object_in_box": true,
+        "description": "seed 3200, failure=grasp_miss, target=red (half-size 0.0203 m), occluder=False, steps=60, a distractor block ended up in the box"
+      },
+      {
+        "seed": 3202,
+        "failure": "grasp_miss",
+        "instruction": "把绿色积木放进盒子里",
+        "target_color": "green",
+        "wrong_object_in_box": false,
+        "description": "seed 3202, failure=grasp_miss, target=green (half-size 0.0176 m), occluder=False, steps=60"
+      },
+      {
+        "seed": 3203,
+        "failure": "grasp_miss",
+        "instruction": "把红色积木放进盒子里",
+        "target_color": "red",
+        "wrong_object_in_box": false,
+        "description": "seed 3203, failure=grasp_miss, target=red (half-size 0.0186 m), occluder=False, steps=60"
+      },
+      {
+        "seed": 3204,
+        "failure": "grasp_miss",
+        "instruction": "把蓝色积木放进盒子里",
+        "target_color": "blue",
+        "wrong_object_in_box": false,
+        "description": "seed 3204, failure=grasp_miss, target=blue (half-size 0.0213 m), occluder=False, steps=60"
+      },
+      {
+        "seed": 3205,
+        "failure": "grasp_miss",
+        "instruction": "把绿色积木放进盒子里",
+        "target_color": "green",
+        "wrong_object_in_box": false,
+        "description": "seed 3205, failure=grasp_miss, target=green (half-size 0.0194 m), occluder=False, steps=60"
+      }
+    ]
+  }
+}

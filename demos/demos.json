@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-10-20T20:37:01",
+  "demos": {
+    "lang": {
+      "ok": true,
+      "path": "demos/02_lang_cond.gif",
+      "bytes": 191293,
+      "frames": 27,
+      "seed": 3203,
+      "steps": 53,
+      "latency_ms": 8.134,
+      "cycle_seconds": 7.07,
+      "instruction": "把红色积木放进盒子里"
+    },
+    "act": {
+      "ok": true,
+      "path": "demos/01_act_rollout.gif",
+      "bytes": 320362,
+      "frames": 43,
+      "seed": 3003,
+      "steps": 42,
+      "latency_ms": 11.36,
+      "cycle_seconds": 5.6,
+      "instruction": "把蓝色积木放进盒子里"
+    }
+  }
+}

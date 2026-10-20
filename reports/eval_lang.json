@@ -1,0 +1,186 @@
+{
+  "generated_at": "2026-10-20T20:27:46",
+  "policy": "lang",
+  "policy_type": "lang",
+  "checkpoint": {
+    "path": "checkpoints/lang_cond.pt",
+    "policy_type": "lang",
+    "n_parameters": 408792,
+    "bytes": 1660781,
+    "metadata": {
+      "epoch": 9,
+      "val_l1": 0.14308,
+      "rollout_success_rate": 0.1667,
+      "trained_on": "simulated scripted demonstrations (no teleop)",
+      "instructions": [
+        "把红色积木放进盒子里",
+        "把绿色积木放进盒子里",
+        "把蓝色积木放进盒子里"
+      ],
+      "train_frames": 4320
+    }
+  },
+  "protocol": {
+    "simulator": "so101_sim (kinematic, 96x96 front + wrist cameras)",
+    "control_hz": 7.5,
+    "max_steps": 60,
+    "replan_interval": 3,
+    "ensemble_decay": 0.01,
+    "seen_seeds": [
+      3000,
+      3001,
+      3002,
+      3003,
+      3004,
+      3005,
+      3006,
+      3007,
+      3008,
+      3009,
+      3010,
+      3011,
+      3012,
+      3013,
+      3014,
+      3015,
+      3016,
+      3017,
+      3018,
+      3019
+    ],
+    "unseen_seeds": [
+      4100,
+      4101,
+      4102,
+      4103,
+      4104,
+      4105,
+      4106,
+      4107,
+      4108,
+      4109,
+      4110,
+      4111,
+      4112,
+      4113,
+      4114,
+      4115,
+      4116,
+      4117,
+      4118,
+      4119
+    ],
+    "lang_seeds": [
+      3200,
+      3201,
+      3202,
+      3203,
+      3204,
+      3205,
+      3206,
+      3207,
+      3208,
+      3209,
+      3210,
+      3211,
+      3212,
+      3213,
+      3214,
+      3215,
+      3216,
+      3217,
+      3218,
+      3219
+    ],
+    "success_definition": "instructed block inside the box after release"
+  },
+  "splits": {
+    "lang": {
+      "trials": 20,
+      "successes": 3,
+      "success_rate": 0.15,
+      "failures": {
+        "grasp_miss": 16,
+        "slip": 1
+      },
+      "grasp_trials": 4,
+      "grounded_grasps": 4,
+      "grounding_accuracy": 1.0,
+      "cycle_seconds_mean": 7.867,
+      "cycle_seconds_min": 6.933,
+      "cycle_seconds_max": 8.0,
+      "wall_seconds_mean": 1.274,
+      "wall_seconds_min": 0.673,
+      "wall_seconds_max": 2.68,
+      "latency_ms_mean": 20.93,
+      "latency_ms_p50": 15.062,
+      "latency_ms_p95": 51.355,
+      "by_color": {
+        "red": {
+          "trials": 7,
+          "success": 1
+        },
+        "blue": {
+          "trials": 7,
+          "success": 2
+        },
+        "green": {
+          "trials": 6,
+          "success": 0
+        }
+      },
+      "wrong_object_in_box": 2,
+      "instruction_accuracy": 0.15,
+      "wrong_object_rate": 0.1
+    }
+  },
+  "failure_cases": [
+    {
+      "seed": 3200,
+      "failure": "grasp_miss",
+      "instruction": "把红色积木放进盒子里",
+      "target_color": "red",
+      "wrong_object_in_box": true,
+      "description": "seed 3200, failure=grasp_miss, target=red (half-size 0.0203 m), occluder=False, steps=60, a distractor block ended up in the box"
+    },
+    {
+      "seed": 3202,
+      "failure": "grasp_miss",
+      "instruction": "把绿色积木放进盒子里",
+      "target_color": "green",
+      "wrong_object_in_box": false,
+      "description": "seed 3202, failure=grasp_miss, target=green (half-size 0.0176 m), occluder=False, steps=60"
+    },
+    {
+      "seed": 3203,
+      "failure": "grasp_miss",
+      "instruction": "把红色积木放进盒子里",
+      "target_color": "red",
+      "wrong_object_in_box": false,
+      "description": "seed 3203, failure=grasp_miss, target=red (half-size 0.0186 m), occluder=False, steps=60"
+    },
+    {
+      "seed": 3204,
+      "failure": "grasp_miss",
+      "instruction": "把蓝色积木放进盒子里",
+      "target_color": "blue",
+      "wrong_object_in_box": false,
+      "description": "seed 3204, failure=grasp_miss, target=blue (half-size 0.0213 m), occluder=False, steps=60"
+    },
+    {
+      "seed": 3205,
+      "failure": "grasp_miss",
+      "instruction": "把绿色积木放进盒子里",
+      "target_color": "green",
+      "wrong_object_in_box": false,
+      "description": "seed 3205, failure=grasp_miss, target=green (half-size 0.0194 m), occluder=False, steps=60"
+    }
+  ],
+  "images": {
+    "failures": "reports/eval_lang_failures.png"
+  },
+  "failure_mode_counts": {
+    "grasp_miss": 16,
+    "slip": 1
+  }
+}

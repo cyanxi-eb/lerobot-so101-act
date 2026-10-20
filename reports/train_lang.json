@@ -1,0 +1,291 @@
+{
+  "title": "Lang-conditioned training on demos_lang",
+  "wall_seconds": 1082.08,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.60481,
+      "train_l1": 0.60481,
+      "lr": 0.0002977,
+      "epoch_seconds": 175.71,
+      "val_l1": 0.32113
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.28846,
+      "train_l1": 0.28846,
+      "lr": 0.0002855,
+      "epoch_seconds": 238.18,
+      "val_l1": 0.22287
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.21494,
+      "train_l1": 0.21494,
+      "lr": 0.0002634,
+      "epoch_seconds": 96.61,
+      "val_l1": 0.19254,
+      "success_rate": 0.0,
+      "failure_modes": {
+        "grasp_miss": 6
+      },
+      "latency_ms_mean": 31.546,
+      "wrong_object": 0,
+      "best": true
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.18348,
+      "train_l1": 0.18348,
+      "lr": 0.0002331,
+      "epoch_seconds": 97.34,
+      "val_l1": 0.16647
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.16337,
+      "train_l1": 0.16337,
+      "lr": 0.0001969,
+      "epoch_seconds": 83.42,
+      "val_l1": 0.15345
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.15281,
+      "train_l1": 0.15281,
+      "lr": 0.0001572,
+      "epoch_seconds": 79.09,
+      "val_l1": 0.16104,
+      "success_rate": 0.0,
+      "failure_modes": {
+        "grasp_miss": 5,
+        "timeout": 1
+      },
+      "latency_ms_mean": 10.401,
+      "wrong_object": 0,
+      "best": true
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.14226,
+      "train_l1": 0.14226,
+      "lr": 0.000117,
+      "epoch_seconds": 59.43,
+      "val_l1": 0.15351
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.13561,
+      "train_l1": 0.13561,
+      "lr": 7.92e-05,
+      "epoch_seconds": 77.37,
+      "val_l1": 0.14069
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.13055,
+      "train_l1": 0.13055,
+      "lr": 4.65e-05,
+      "epoch_seconds": 64.92,
+      "val_l1": 0.14308,
+      "success_rate": 0.1667,
+      "failure_modes": {
+        "grasp_miss": 5
+      },
+      "latency_ms_mean": 26.647,
+      "wrong_object": 0,
+      "best": true
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.12777,
+      "train_l1": 0.12777,
+      "lr": 2.13e-05,
+      "epoch_seconds": 63.1,
+      "val_l1": 0.13953
+    }
+  ],
+  "mode": "full",
+  "config": {
+    "image_size": 64,
+    "n_cameras": 2,
+    "state_dim": 6,
+    "action_dim": 6,
+    "chunk_size": 20,
+    "d_model": 128,
+    "n_heads": 4,
+    "n_layers": 2,
+    "text_dim": 32,
+    "dropout": 0.1,
+    "max_text_len": 16,
+    "cnn_channels": [
+      32,
+      64,
+      64,
+      64
+    ]
+  },
+  "cli": {
+    "dataset": "data/demos_lang",
+    "cache": ".cache/lang_cache.npz",
+    "out": "checkpoints/lang_cond.pt",
+    "report": "reports/train_lang.json",
+    "image_size": 64,
+    "chunk_size": 20,
+    "batch_size": 32,
+    "epochs": 12,
+    "max_minutes": 17.0,
+    "lr": 0.0003,
+    "weight_decay": 0.0001,
+    "val_episodes": 8,
+    "eval_every": 3,
+    "eval_trials": 6,
+    "seed": 0,
+    "smoke": false
+  },
+  "dataset": "data/demos_lang",
+  "cache": ".cache/lang_cache.npz",
+  "cache_build_seconds": 62.77,
+  "parameter_count": 408792,
+  "vocab_size": 14,
+  "vocabulary": [
+    "<pad>",
+    "<unk>",
+    "子",
+    "把",
+    "放",
+    "木",
+    "盒",
+    "积",
+    "红",
+    "绿",
+    "色",
+    "蓝",
+    "进",
+    "里"
+  ],
+  "checkpoint": "checkpoints/lang_cond.pt",
+  "checkpoint_bytes": 1660781,
+  "checkpoint_mb": 1.661,
+  "best_epoch": 9,
+  "best_success_rate": 0.1667,
+  "best_val_l1": 0.14308,
+  "epochs_done": 10,
+  "total_steps": 1350,
+  "train_seconds": 1082.08,
+  "train_minutes": 18.03,
+  "steps_per_second": 1.248,
+  "torch_threads": 2,
+  "device": "cpu",
+  "rollout_history": [
+    {
+      "epoch": 3,
+      "trials": 6,
+      "successes": 0,
+      "success_rate": 0.0,
+      "failures": {
+        "grasp_miss": 6
+      },
+      "grasp_trials": 0,
+      "grounded_grasps": 0,
+      "grounding_accuracy": null,
+      "cycle_seconds_mean": 8.0,
+      "cycle_seconds_min": 8.0,
+      "cycle_seconds_max": 8.0,
+      "wall_seconds_mean": 1.377,
+      "wall_seconds_min": 0.933,
+      "wall_seconds_max": 2.529,
+      "latency_ms_mean": 31.546,
+      "latency_ms_p50": 17.485,
+      "latency_ms_p95": 83.113,
+      "by_color": {
+        "red": {
+          "trials": 2,
+          "success": 0
+        },
+        "blue": {
+          "trials": 2,
+          "success": 0
+        },
+        "green": {
+          "trials": 2,
+          "success": 0
+        }
+      },
+      "wrong_object_in_box": 0
+    },
+    {
+      "epoch": 6,
+      "trials": 6,
+      "successes": 0,
+      "success_rate": 0.0,
+      "failures": {
+        "grasp_miss": 5,
+        "timeout": 1
+      },
+      "grasp_trials": 1,
+      "grounded_grasps": 1,
+      "grounding_accuracy": 1.0,
+      "cycle_seconds_mean": 8.0,
+      "cycle_seconds_min": 8.0,
+      "cycle_seconds_max": 8.0,
+      "wall_seconds_mean": 0.733,
+      "wall_seconds_min": 0.668,
+      "wall_seconds_max": 0.835,
+      "latency_ms_mean": 10.401,
+      "latency_ms_p50": 8.639,
+      "latency_ms_p95": 17.391,
+      "by_color": {
+        "red": {
+          "trials": 2,
+          "success": 0
+        },
+        "blue": {
+          "trials": 2,
+          "success": 0
+        },
+        "green": {
+          "trials": 2,
+          "success": 0
+        }
+      },
+      "wrong_object_in_box": 0
+    },
+    {
+      "epoch": 9,
+      "trials": 6,
+      "successes": 1,
+      "success_rate": 0.1667,
+      "failures": {
+        "grasp_miss": 5
+      },
+      "grasp_trials": 1,
+      "grounded_grasps": 1,
+      "grounding_accuracy": 1.0,
+      "cycle_seconds_mean": 7.845,
+      "cycle_seconds_min": 7.067,
+      "cycle_seconds_max": 8.0,
+      "wall_seconds_mean": 1.244,
+      "wall_seconds_min": 0.781,
+      "wall_seconds_max": 1.686,
+      "latency_ms_mean": 26.647,
+      "latency_ms_p50": 26.118,
+      "latency_ms_p95": 43.244,
+      "by_color": {
+        "red": {
+          "trials": 2,
+          "success": 0
+        },
+        "blue": {
+          "trials": 2,
+          "success": 1
+        },
+        "green": {
+          "trials": 2,
+          "success": 0
+        }
+      },
+      "wrong_object_in_box": 0
+    }
+  ]
+}

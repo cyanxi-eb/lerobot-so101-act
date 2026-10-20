@@ -1,6 +1,6 @@
 {
   "mode": "act",
-  "dataset_root": "C:\\Users\\Administrator\\Desktop\\data\\ds-wkpl\\robot_resume\\repos\\lerobot-so101-act\\data\\demos_act",
+  "dataset_root": "data/demos_act",
   "requested_episodes": 80,
   "episodes": 80,
   "frames": 4800,

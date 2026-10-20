@@ -1,0 +1,40 @@
+{
+  "policy": "act",
+  "split": "lang",
+  "checkpoint": "checkpoints/act.pt",
+  "summary": {
+    "trials": 20,
+    "successes": 5,
+    "success_rate": 0.25,
+    "failures": {
+      "grasp_miss": 15
+    },
+    "grasp_trials": 5,
+    "grounded_grasps": 5,
+    "grounding_accuracy": 1.0,
+    "cycle_seconds_mean": 7.74,
+    "cycle_seconds_min": 6.533,
+    "cycle_seconds_max": 8.0,
+    "wall_seconds_mean": 1.289,
+    "wall_seconds_min": 0.869,
+    "wall_seconds_max": 2.156,
+    "latency_ms_mean": 21.682,
+    "latency_ms_p50": 14.595,
+    "latency_ms_p95": 49.467,
+    "by_color": {
+      "red": {
+        "trials": 7,
+        "success": 1
+      },
+      "blue": {
+        "trials": 7,
+        "success": 2
+      },
+      "green": {
+        "trials": 6,
+        "success": 2
+      }
+    },
+    "wrong_object_in_box": 2
+  }
+}

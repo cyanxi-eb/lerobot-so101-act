@@ -1,0 +1,376 @@
+{
+  "title": "ACT training on demos_act",
+  "wall_seconds": 1219.35,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.12844,
+      "train_l1": 0.12813,
+      "train_kl": 3e-05,
+      "lr": 0.0002481,
+      "epoch_seconds": 93.61,
+      "val_l1": 0.14529
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.12534,
+      "train_l1": 0.12512,
+      "train_kl": 2e-05,
+      "lr": 0.000238,
+      "epoch_seconds": 118.76,
+      "val_l1": 0.15729,
+      "success_rate": 0.25,
+      "failure_modes": {
+        "grasp_miss": 5,
+        "timeout": 1
+      },
+      "latency_ms_mean": 20.75,
+      "best": true
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.11933,
+      "train_l1": 0.11918,
+      "train_kl": 2e-05,
+      "lr": 0.0002198,
+      "epoch_seconds": 127.96,
+      "val_l1": 0.15678
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.11539,
+      "train_l1": 0.11527,
+      "train_kl": 1e-05,
+      "lr": 0.0001948,
+      "epoch_seconds": 102.1,
+      "val_l1": 0.14537,
+      "success_rate": 0.125,
+      "failure_modes": {
+        "grasp_miss": 6,
+        "timeout": 1
+      },
+      "latency_ms_mean": 26.384
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.11091,
+      "train_l1": 0.11081,
+      "train_kl": 1e-05,
+      "lr": 0.0001649,
+      "epoch_seconds": 95.25,
+      "val_l1": 0.15285
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.10674,
+      "train_l1": 0.10666,
+      "train_kl": 1e-05,
+      "lr": 0.0001322,
+      "epoch_seconds": 87.2,
+      "val_l1": 0.14638,
+      "success_rate": 0.5,
+      "failure_modes": {
+        "grasp_miss": 3,
+        "misplace": 1
+      },
+      "latency_ms_mean": 22.609,
+      "best": true
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.10439,
+      "train_l1": 0.10431,
+      "train_kl": 1e-05,
+      "lr": 9.9e-05,
+      "epoch_seconds": 83.86,
+      "val_l1": 0.13849
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.10195,
+      "train_l1": 0.10189,
+      "train_kl": 1e-05,
+      "lr": 6.78e-05,
+      "epoch_seconds": 96.09,
+      "val_l1": 0.13334,
+      "success_rate": 0.5,
+      "failure_modes": {
+        "grasp_miss": 3,
+        "misplace": 1
+      },
+      "latency_ms_mean": 58.327,
+      "best": true
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.099,
+      "train_l1": 0.09894,
+      "train_kl": 1e-05,
+      "lr": 4.09e-05,
+      "epoch_seconds": 140.12,
+      "val_l1": 0.13939
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.09739,
+      "train_l1": 0.09734,
+      "train_kl": 1e-05,
+      "lr": 2.01e-05,
+      "epoch_seconds": 205.94,
+      "val_l1": 0.13278,
+      "success_rate": 0.375,
+      "failure_modes": {
+        "grasp_miss": 5
+      },
+      "latency_ms_mean": 65.169
+    }
+  ],
+  "mode": "full",
+  "config": {
+    "image_size": 64,
+    "n_cameras": 2,
+    "state_dim": 6,
+    "action_dim": 6,
+    "chunk_size": 20,
+    "d_model": 128,
+    "n_heads": 4,
+    "n_enc_layers": 2,
+    "n_dec_layers": 2,
+    "latent_dim": 32,
+    "dropout": 0.1,
+    "cnn_channels": [
+      32,
+      64,
+      64,
+      64
+    ],
+    "kl_weight": 10.0
+  },
+  "cli": {
+    "dataset": "data/demos_act",
+    "cache": ".cache/act_cache.npz",
+    "out": "checkpoints/act.pt",
+    "report": "reports/train_act_stage2.json",
+    "image_size": 64,
+    "chunk_size": 20,
+    "batch_size": 32,
+    "epochs": 12,
+    "max_minutes": 20.0,
+    "lr": 0.00025,
+    "weight_decay": 0.0001,
+    "val_episodes": 8,
+    "eval_every": 2,
+    "eval_trials": 8,
+    "kl_weight": 10.0,
+    "grad_clip": 1.0,
+    "seed": 0,
+    "threads": 4,
+    "init_from": "checkpoints/act_stage1.pt",
+    "lr_min": 0.01,
+    "smoke": false
+  },
+  "dataset": "data/demos_act",
+  "cache": ".cache/act_cache.npz",
+  "cache_build_seconds": 0.39,
+  "parameter_count": 680664,
+  "checkpoint": "checkpoints/act.pt",
+  "checkpoint_bytes": 2757813,
+  "checkpoint_mb": 2.758,
+  "best_epoch": 8,
+  "best_success_rate": 0.5,
+  "best_val_l1": 0.13334,
+  "epochs_done": 10,
+  "batches_per_epoch": 135,
+  "total_steps": 1350,
+  "train_seconds": 1219.35,
+  "train_minutes": 20.32,
+  "steps_per_second": 1.107,
+  "torch_threads": 4,
+  "device": "cpu",
+  "rollout_history": [
+    {
+      "epoch": 2,
+      "trials": 8,
+      "successes": 2,
+      "success_rate": 0.25,
+      "failures": {
+        "grasp_miss": 5,
+        "timeout": 1
+      },
+      "grasp_trials": 2,
+      "grounded_grasps": 2,
+      "grounding_accuracy": 1.0,
+      "cycle_seconds_mean": 7.883,
+      "cycle_seconds_min": 7.2,
+      "cycle_seconds_max": 8.0,
+      "wall_seconds_mean": 1.017,
+      "wall_seconds_min": 0.756,
+      "wall_seconds_max": 1.457,
+      "latency_ms_mean": 20.75,
+      "latency_ms_p50": 12.359,
+      "latency_ms_p95": 47.189,
+      "by_color": {
+        "red": {
+          "trials": 2,
+          "success": 0
+        },
+        "green": {
+          "trials": 3,
+          "success": 1
+        },
+        "blue": {
+          "trials": 3,
+          "success": 1
+        }
+      },
+      "wrong_object_in_box": 0
+    },
+    {
+      "epoch": 4,
+      "trials": 8,
+      "successes": 1,
+      "success_rate": 0.125,
+      "failures": {
+        "grasp_miss": 6,
+        "timeout": 1
+      },
+      "grasp_trials": 1,
+      "grounded_grasps": 1,
+      "grounding_accuracy": 1.0,
+      "cycle_seconds_mean": 7.933,
+      "cycle_seconds_min": 7.467,
+      "cycle_seconds_max": 8.0,
+      "wall_seconds_mean": 1.156,
+      "wall_seconds_min": 0.842,
+      "wall_seconds_max": 1.579,
+      "latency_ms_mean": 26.384,
+      "latency_ms_p50": 21.086,
+      "latency_ms_p95": 49.96,
+      "by_color": {
+        "red": {
+          "trials": 2,
+          "success": 1
+        },
+        "green": {
+          "trials": 3,
+          "success": 0
+        },
+        "blue": {
+          "trials": 3,
+          "success": 0
+        }
+      },
+      "wrong_object_in_box": 0
+    },
+    {
+      "epoch": 6,
+      "trials": 8,
+      "successes": 4,
+      "success_rate": 0.5,
+      "failures": {
+        "grasp_miss": 3,
+        "misplace": 1
+      },
+      "grasp_trials": 5,
+      "grounded_grasps": 5,
+      "grounding_accuracy": 1.0,
+      "cycle_seconds_mean": 7.583,
+      "cycle_seconds_min": 7.067,
+      "cycle_seconds_max": 8.0,
+      "wall_seconds_mean": 0.961,
+      "wall_seconds_min": 0.718,
+      "wall_seconds_max": 1.348,
+      "latency_ms_mean": 22.609,
+      "latency_ms_p50": 15.851,
+      "latency_ms_p95": 47.16,
+      "by_color": {
+        "red": {
+          "trials": 2,
+          "success": 2
+        },
+        "green": {
+          "trials": 3,
+          "success": 2
+        },
+        "blue": {
+          "trials": 3,
+          "success": 0
+        }
+      },
+      "wrong_object_in_box": 0
+    },
+    {
+      "epoch": 8,
+      "trials": 8,
+      "successes": 4,
+      "success_rate": 0.5,
+      "failures": {
+        "grasp_miss": 3,
+        "misplace": 1
+      },
+      "grasp_trials": 5,
+      "grounded_grasps": 5,
+      "grounding_accuracy": 1.0,
+      "cycle_seconds_mean": 7.667,
+      "cycle_seconds_min": 6.667,
+      "cycle_seconds_max": 8.0,
+      "wall_seconds_mean": 1.559,
+      "wall_seconds_min": 0.853,
+      "wall_seconds_max": 3.949,
+      "latency_ms_mean": 58.327,
+      "latency_ms_p50": 24.548,
+      "latency_ms_p95": 187.679,
+      "by_color": {
+        "red": {
+          "trials": 2,
+          "success": 0
+        },
+        "green": {
+          "trials": 3,
+          "success": 3
+        },
+        "blue": {
+          "trials": 3,
+          "success": 1
+        }
+      },
+      "wrong_object_in_box": 0
+    },
+    {
+      "epoch": 10,
+      "trials": 8,
+      "successes": 3,
+      "success_rate": 0.375,
+      "failures": {
+        "grasp_miss": 5
+      },
+      "grasp_trials": 3,
+      "grounded_grasps": 3,
+      "grounding_accuracy": 1.0,
+      "cycle_seconds_mean": 7.683,
+      "cycle_seconds_min": 6.8,
+      "cycle_seconds_max": 8.0,
+      "wall_seconds_mean": 1.637,
+      "wall_seconds_min": 1.17,
+      "wall_seconds_max": 2.381,
+      "latency_ms_mean": 65.169,
+      "latency_ms_p50": 53.536,
+      "latency_ms_p95": 115.575,
+      "by_color": {
+        "red": {
+          "trials": 2,
+          "success": 1
+        },
+        "green": {
+          "trials": 3,
+          "success": 1
+        },
+        "blue": {
+          "trials": 3,
+          "success": 1
+        }
+      },
+      "wrong_object_in_box": 0
+    }
+  ]
+}
