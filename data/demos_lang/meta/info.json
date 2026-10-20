@@ -1,0 +1,103 @@
+{
+  "codebase_version": "v3.0",
+  "robot_type": "so101_sim",
+  "total_episodes": 80,
+  "total_frames": 4800,
+  "total_tasks": 3,
+  "total_videos": 160,
+  "total_chunks": 1,
+  "chunks_size": 1000,
+  "fps": 7.5,
+  "dt": 0.133333,
+  "image_size": 96,
+  "splits": {
+    "train": "0:80"
+  },
+  "data_path": "data/chunk-{chunk:03d}/episode_{episode:06d}.parquet",
+  "video_path": "videos/chunk-{chunk:03d}/{video_key}/episode_{episode:06d}.mp4",
+  "features": {
+    "observation.state": {
+      "dtype": "float32",
+      "shape": [
+        6
+      ],
+      "names": [
+        "q1_base_yaw",
+        "q2_shoulder",
+        "q3_elbow",
+        "q4_wrist",
+        "q5_roll",
+        "gripper"
+      ]
+    },
+    "observation.images.front": {
+      "dtype": "video",
+      "shape": [
+        96,
+        96,
+        3
+      ],
+      "names": [
+        "height",
+        "width",
+        "channels"
+      ],
+      "info": {
+        "video.fps": 7.5,
+        "video.codec": "libx264",
+        "video.pix_fmt": "yuv420p",
+        "video.is_depth_map": false,
+        "has_audio": false
+      }
+    },
+    "observation.images.wrist": {
+      "dtype": "video",
+      "shape": [
+        96,
+        96,
+        3
+      ],
+      "names": [
+        "height",
+        "width",
+        "channels"
+      ],
+      "info": {
+        "video.fps": 7.5,
+        "video.codec": "libx264",
+        "video.pix_fmt": "yuv420p",
+        "video.is_depth_map": false,
+        "has_audio": false
+      }
+    },
+    "action": {
+      "dtype": "float32",
+      "shape": [
+        6
+      ],
+      "names": [
+        "q1_base_yaw",
+        "q2_shoulder",
+        "q3_elbow",
+        "q4_wrist",
+        "q5_roll",
+        "gripper"
+      ]
+    }
+  },
+  "generation": {
+    "simulator": "so101_sim (custom, no hardware)",
+    "expert": "scripted Cartesian state machine with analytic IK",
+    "domain_randomization": [
+      "initial arm pose",
+      "block colour / size / pose / yaw",
+      "box placement",
+      "front camera extrinsics + fov ('mounting error')",
+      "wrist camera offset",
+      "table / box colour and brightness",
+      "optional tall occluder between front camera and target",
+      "gripper slip probability and grasp tolerance"
+    ],
+    "hardware_teleoperation": false
+  }
+}
