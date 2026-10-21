@@ -346,7 +346,8 @@ data/demos_act/
 2. 动作空间改成「当前位姿 + delta」，冲 cm 级精度；
 3. 按 [`docs/real_robot.md`](docs/real_robot.md) 采 80–100 条遥操作数据，跑同一套
    writer / train / eval 脚本，给出真实的 sim2real 对比；
-4. 语言条件策略换成 Hugging Face 上预训练的 SmolVLA 做对照（需要 GPU）；
+4. 语言条件策略换成 Hugging Face 上预训练的 SmolVLA / VLM 做对照（需要 GPU），
+   阶段和验收口径见 [`ROADMAP.md`](ROADMAP.md)；
 5. 集成推理延迟是单模型的 2×，真机前要蒸馏成单模型或换更大 batch 的部署方式。
 
 ---
