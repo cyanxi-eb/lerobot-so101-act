@@ -6,7 +6,8 @@
 >
 > **一句话定位**：把仿真里的 SO-101 抓取演示，走成一条能复现的管线 ——
 > 脚本专家采数据 → LeRobot v3 风格数据集 → ACT 模仿学习 → 语言条件策略
-> → 闭环评测和 rollout 录像。全程 CPU，不碰 GPU。
+> → 闭环评测和 rollout 录像。主干是 CPU 管线；另做了一次 32 GB 单卡重训实验
+> （见 §6.1），用同一套脚本验证算力换来的增益。
 >
 > 边界先说清楚：**没有真机、没有遥操作采集，也没有在 ROS2 上实跑**。演示
 > 数据由仿真里的脚本专家生成，"抓取成功"由几何规则判定。这里验证的是算法和
@@ -45,6 +46,12 @@ seed 与训练不相交。协议和指标定义见
 - CPU 上单 chunk 十几到二十几毫秒，7.5 Hz 的控制循环跑得动。
 
 <!-- METRICS_TABLE_END -->
+
+> **2026-10 GPU 重训（补充实验）**：在 32 GB 单卡上把数据加到 240 条、
+> 输入提到 96×96，加光度/平移增广并做双 checkpoint 集成。同 seed 20 trials
+> 下 **seen 55%（11/20）、unseen 25%（5/20）**，同协议重跑的 CPU 基线是
+> 40% / 15%；训练从 CPU 的 ~65 min 降到 18 min。协议、消融和失败分析见
+> §6.1 和 [`docs/gpu_retrain.md`](docs/gpu_retrain.md)。
 
 演示取自真实 rollout，不是手工动画：
 
@@ -264,6 +271,33 @@ data/demos_act/
 
 ---
 
+### 6.1 GPU 重训实验（32 GB 单卡）
+
+2026-10 补的一次补充实验：把演示从 80 条加到 240 条（脚本专家、96×96 双相机），
+在单卡 32 GB 上训练两种 ACT，再试双 checkpoint 集成。同协议（同 seed、replan=5、
+无时序集成）、20 trials/split 的结果：
+
+| 策略 | seen | unseen | chunk 延迟（seen） |
+| --- | ---: | ---: | ---: |
+| CPU 基线（80 条，0.68 M，同协议重跑） | 8/20（40%） | 3/20（15%） | 4.1 ms |
+| GPU 大模型（240 条，2.09 M，150 epoch） | 10/20（50%） | 1/20（5%） | 4.2 ms |
+| GPU 增广（240 条，0.68 M + 光度/平移增广） | 8/20（40%） | **7/20（35%）** | 4.2 ms |
+| **双 checkpoint 集成**（大模型 + 增广，等权平均） | **11/20（55%）** | 5/20（25%） | 6.5 ms |
+
+- **增广解决的是分布漂移**：unseen 从 15% 提到 35%；大模型只对已见分布有用
+  （50%），几乎不迁移到没见过的颜色（5%）；集成把两边合起来，seen 55%、
+  unseen 25%，两个 split 都不低于 CPU 基线。
+- 训练 150 epoch 用 10.2 min、100 epoch 用 7.3 min（GPU batch=128，约 25 steps/s），
+  相比 CPU 版 65 min 是数量级差别；模型和报告在 `checkpoints/act_240_*.pt`、
+  `reports/gpu/`。
+- 50 trials/split 的对照里，CPU 基线是 19/50（38%）/ 4/50（8%）；集成只跑了
+  20 trials 这套，原因是本地 CPU 复评太慢，没把 50 trials 的集成结果算进主表。
+- 失败仍然以 `grasp_miss`（抓空）为主，说明瓶颈是视觉定位精度，不是抓取后放偏；
+  下一步的动作空间 delta 化、运动模糊/曝光增广和语言策略 GPU 重训都写在
+  [`docs/gpu_retrain.md`](docs/gpu_retrain.md) §5。
+
+---
+
 ## 7. 失败案例（真实遇到）
 
 完整复盘在 [`docs/failure_cases.md`](docs/failure_cases.md)，这里挑几个有代表性
@@ -297,8 +331,9 @@ data/demos_act/
 **限制**
 
 1. 全程仿真：没有真机、没有遥操作，抓取由几何规则判定，不是接触物理引擎；
-2. CPU 预算有限（单段 ~20 min，合计 ~65 min），模型只有 0.68 M 参数、64×64
-   输入，成功率明显被算力卡住；
+2. CPU 主干预算有限（单段 ~20 min，合计 ~65 min），模型只有 0.68 M 参数、64×64
+   输入；2026-10 用 32 GB 单卡补了 240 条 + 96×96 + 增广/集成的重训
+   （seen 55% / unseen 25%），但真机结论仍然没有；
 3. 脚本专家接近「完美 IK」，没有真机的手眼标定误差、接触抖动和运动模糊；
 4. 每个 split 20 trials，置信区间大约 ±10%，50% 和 40% 的差别别当显著；
 5. 语言条件策略是轻量实现，不是 SmolVLA；它验证的是「中文指令 + 视觉选目标」
@@ -306,12 +341,13 @@ data/demos_act/
 
 **下一步**
 
-1. 换更强的 CPU 或单卡 GPU，把训练预算提到数小时，复跑正式 200 epoch；
-2. 数据加到 200–400 条，补真机风格增广（运动模糊、曝光、相机安装角变化）；
-3. 动作空间改成「当前位姿 + delta」，冲 cm 级精度；
-4. 按 [`docs/real_robot.md`](docs/real_robot.md) 采 80–100 条遥操作数据，跑同一套
+1. 单卡 GPU 已经跑通（240 条、96×96、增广 + 集成）；下一步把演示加到 400–600
+   条，补运动模糊、曝光、相机安装角变化，并把 50 trials 的集成结果补齐；
+2. 动作空间改成「当前位姿 + delta」，冲 cm 级精度；
+3. 按 [`docs/real_robot.md`](docs/real_robot.md) 采 80–100 条遥操作数据，跑同一套
    writer / train / eval 脚本，给出真实的 sim2real 对比；
-5. 语言条件策略换成 Hugging Face 上预训练的 SmolVLA 做对照（需要 GPU）。
+4. 语言条件策略换成 Hugging Face 上预训练的 SmolVLA 做对照（需要 GPU）；
+5. 集成推理延迟是单模型的 2×，真机前要蒸馏成单模型或换更大 batch 的部署方式。
 
 ---
 
@@ -335,13 +371,14 @@ lerobot-so101-act/
 │   ├── so101_sim/          # FK/IK、场景、渲染、抓取环境、脚本专家
 │   ├── so101_dataset/      # LeRobot v3 子集 writer/reader/stats/cache
 │   └── so101_policy/       # ACT、语言条件策略、归一化、推理、rollout、训练工具
-├── scripts/                # 生成数据 / 训练 / 评测 / 录 GIF
+├── scripts/                # 生成数据 / 训练 / 评测 / 录 GIF（含 eval_ensemble.py）
 ├── tests/                  # 50 个 CPU 测试
-├── docs/                   # architecture / dataset_format / evaluation / failure_cases / real_robot
+├── docs/                   # architecture / dataset_format / evaluation / failure_cases / real_robot / gpu_retrain
 ├── data/demos_act, demos_lang   # 已生成的演示数据集（LeRobot v3 风格）
 ├── demos/                  # 真实 rollout GIF + MP4
 ├── assets/                 # 封面图
-├── reports/                # 训练日志、评测报告、数据集统计、曲线图
+├── checkpoints/            # CPU 基线 + GPU 重训（act_240_gpu / act_240_aug）
+├── reports/                # 训练日志、评测报告、数据集统计、曲线图（gpu/ 是重训实验）
 ├── ros2_ws/                # ROS2 推理节点骨架（未运行）
 └── .github/workflows/ci.yml
 ```

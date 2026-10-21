@@ -1,0 +1,224 @@
+{
+  "policy": "act",
+  "policy_type": "act",
+  "checkpoint": {
+    "path": "checkpoints/act_240_gpu.pt",
+    "policy_type": "act",
+    "n_parameters": 2087272,
+    "bytes": 8395054,
+    "metadata": {
+      "epoch": 70,
+      "val_l1": 0.08414,
+      "rollout_success_rate": 0.6,
+      "trained_on": "simulated scripted demonstrations (no teleop)",
+      "train_frames": 13920,
+      "val_frames": 480,
+      "elapsed_seconds": 288.7
+    }
+  },
+  "protocol": {
+    "simulator": "so101_sim (kinematic, 96x96 front + wrist cameras)",
+    "control_hz": 7.5,
+    "max_steps": 60,
+    "replan_interval": 5,
+    "ensemble_decay": 0.0,
+    "seen_seeds": [
+      3000,
+      3001,
+      3002,
+      3003,
+      3004,
+      3005,
+      3006,
+      3007,
+      3008,
+      3009,
+      3010,
+      3011,
+      3012,
+      3013,
+      3014,
+      3015,
+      3016,
+      3017,
+      3018,
+      3019
+    ],
+    "unseen_seeds": [
+      4100,
+      4101,
+      4102,
+      4103,
+      4104,
+      4105,
+      4106,
+      4107,
+      4108,
+      4109,
+      4110,
+      4111,
+      4112,
+      4113,
+      4114,
+      4115,
+      4116,
+      4117,
+      4118,
+      4119
+    ],
+    "lang_seeds": [
+      3200,
+      3201,
+      3202,
+      3203,
+      3204,
+      3205,
+      3206,
+      3207,
+      3208,
+      3209,
+      3210,
+      3211,
+      3212,
+      3213,
+      3214,
+      3215,
+      3216,
+      3217,
+      3218,
+      3219
+    ],
+    "success_definition": "instructed block inside the box after release"
+  },
+  "splits": {
+    "seen": {
+      "trials": 20,
+      "successes": 10,
+      "success_rate": 0.5,
+      "failures": {
+        "grasp_miss": 10
+      },
+      "grasp_trials": 10,
+      "grounded_grasps": 10,
+      "grounding_accuracy": 1.0,
+      "cycle_seconds_mean": 7.533,
+      "cycle_seconds_min": 6.8,
+      "cycle_seconds_max": 8.0,
+      "wall_seconds_mean": 0.217,
+      "wall_seconds_min": 0.145,
+      "wall_seconds_max": 0.755,
+      "latency_ms_mean": 4.192,
+      "latency_ms_p50": 1.868,
+      "latency_ms_p95": 5.431,
+      "by_color": {
+        "red": {
+          "trials": 9,
+          "success": 5
+        },
+        "blue": {
+          "trials": 4,
+          "success": 2
+        },
+        "green": {
+          "trials": 7,
+          "success": 3
+        }
+      },
+      "wrong_object_in_box": 0
+    },
+    "unseen": {
+      "trials": 20,
+      "successes": 1,
+      "success_rate": 0.05,
+      "failures": {
+        "grasp_miss": 19
+      },
+      "grasp_trials": 1,
+      "grounded_grasps": 1,
+      "grounding_accuracy": 1.0,
+      "cycle_seconds_mean": 7.953,
+      "cycle_seconds_min": 7.067,
+      "cycle_seconds_max": 8.0,
+      "wall_seconds_mean": 0.165,
+      "wall_seconds_min": 0.146,
+      "wall_seconds_max": 0.17,
+      "latency_ms_mean": 1.843,
+      "latency_ms_p50": 1.84,
+      "latency_ms_p95": 1.899,
+      "by_color": {
+        "purple": {
+          "trials": 15,
+          "success": 1
+        },
+        "yellow": {
+          "trials": 5,
+          "success": 0
+        }
+      },
+      "wrong_object_in_box": 0
+    }
+  },
+  "failure_cases": [
+    {
+      "seed": 3000,
+      "split": "seen",
+      "failure": "grasp_miss",
+      "target_color": "red",
+      "target_size": 0.0178,
+      "has_occluder": false,
+      "release_error_m": null,
+      "wrong_object_in_box": false,
+      "description": "seed 3000, failure=grasp_miss, target=red (half-size 0.0178 m), occluder=False, steps=60"
+    },
+    {
+      "seed": 3003,
+      "split": "seen",
+      "failure": "grasp_miss",
+      "target_color": "blue",
+      "target_size": 0.0194,
+      "has_occluder": true,
+      "release_error_m": null,
+      "wrong_object_in_box": false,
+      "description": "seed 3003, failure=grasp_miss, target=blue (half-size 0.0194 m), occluder=True, steps=60"
+    },
+    {
+      "seed": 3004,
+      "split": "seen",
+      "failure": "grasp_miss",
+      "target_color": "red",
+      "target_size": 0.0217,
+      "has_occluder": true,
+      "release_error_m": null,
+      "wrong_object_in_box": false,
+      "description": "seed 3004, failure=grasp_miss, target=red (half-size 0.0217 m), occluder=True, steps=60"
+    },
+    {
+      "seed": 3005,
+      "split": "seen",
+      "failure": "grasp_miss",
+      "target_color": "blue",
+      "target_size": 0.0206,
+      "has_occluder": true,
+      "release_error_m": null,
+      "wrong_object_in_box": false,
+      "description": "seed 3005, failure=grasp_miss, target=blue (half-size 0.0206 m), occluder=True, steps=60"
+    },
+    {
+      "seed": 3011,
+      "split": "seen",
+      "failure": "grasp_miss",
+      "target_color": "green",
+      "target_size": 0.021,
+      "has_occluder": false,
+      "release_error_m": null,
+      "wrong_object_in_box": false,
+      "description": "seed 3011, failure=grasp_miss, target=green (half-size 0.021 m), occluder=False, steps=60"
+    }
+  ],
+  "images": {
+    "failures": "reports/eval_act_failures.png"
+  },
+  "failure_mode_counts": {
+    "grasp_miss": 29
+  }
+}

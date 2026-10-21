@@ -1,0 +1,2433 @@
+{
+  "mode": "act",
+  "dataset_root": "/root/autodl-tmp/p3/data/demos_act_240",
+  "requested_episodes": 240,
+  "episodes": 240,
+  "frames": 14400,
+  "attempts": 248,
+  "dropped_episodes": 8,
+  "expert_success_rate": 0.9677,
+  "episode_length": 60,
+  "fps": 7.5,
+  "cycle_seconds": 8.0,
+  "image_size": 96,
+  "target_color_counts": {
+    "green": 78,
+    "red": 88,
+    "blue": 74
+  },
+  "instruction_counts": {
+    "抓取积木并放进盒子": 240
+  },
+  "grasp_error_mean": 0.0,
+  "grasp_error_max": 0.0,
+  "dataset_bytes": 7900138,
+  "dataset_mb": 7.9,
+  "generation_seconds": 138.11,
+  "episodes_summary": [
+    {
+      "episode_index": 0,
+      "seed": 0,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0171,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 1,
+      "seed": 17,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0226,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 2,
+      "seed": 34,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0214,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 3,
+      "seed": 51,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0201,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 4,
+      "seed": 68,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0196,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 5,
+      "seed": 85,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0201,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 6,
+      "seed": 102,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0222,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 7,
+      "seed": 119,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0182,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 8,
+      "seed": 136,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.019,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 9,
+      "seed": 153,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0183,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 10,
+      "seed": 170,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0172,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 11,
+      "seed": 187,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0172,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 12,
+      "seed": 204,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0213,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 13,
+      "seed": 221,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0176,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 14,
+      "seed": 238,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0227,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 15,
+      "seed": 255,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0206,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 16,
+      "seed": 272,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.02,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 17,
+      "seed": 289,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0184,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 18,
+      "seed": 306,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0206,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 19,
+      "seed": 323,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0176,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 20,
+      "seed": 340,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0217,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 21,
+      "seed": 357,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0223,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 22,
+      "seed": 374,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0174,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 23,
+      "seed": 391,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0178,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 24,
+      "seed": 408,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0226,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 25,
+      "seed": 425,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.02,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 26,
+      "seed": 442,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0189,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 27,
+      "seed": 459,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0171,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 28,
+      "seed": 476,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0179,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 29,
+      "seed": 493,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0196,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 30,
+      "seed": 510,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.02,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 31,
+      "seed": 527,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0212,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 32,
+      "seed": 544,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0202,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 33,
+      "seed": 561,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0217,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 34,
+      "seed": 578,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0209,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 35,
+      "seed": 595,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0198,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 36,
+      "seed": 612,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0202,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 37,
+      "seed": 629,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0204,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 38,
+      "seed": 646,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0215,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 39,
+      "seed": 100666,
+      "attempt": 1,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0188,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 40,
+      "seed": 680,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0196,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 41,
+      "seed": 697,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0209,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 42,
+      "seed": 714,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0228,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 43,
+      "seed": 731,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.021,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 44,
+      "seed": 748,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0214,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 45,
+      "seed": 765,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.018,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 46,
+      "seed": 782,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0222,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 47,
+      "seed": 799,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0199,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 48,
+      "seed": 816,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0216,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 49,
+      "seed": 833,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0207,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 50,
+      "seed": 850,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0191,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 51,
+      "seed": 867,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0197,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 52,
+      "seed": 884,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0187,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 53,
+      "seed": 901,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0227,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 54,
+      "seed": 918,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0227,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 55,
+      "seed": 935,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0196,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 56,
+      "seed": 952,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.018,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 57,
+      "seed": 969,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0176,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 58,
+      "seed": 986,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0206,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 59,
+      "seed": 1003,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0216,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 60,
+      "seed": 1020,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0223,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 61,
+      "seed": 1037,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0202,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 62,
+      "seed": 1054,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0217,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 63,
+      "seed": 1071,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0187,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 64,
+      "seed": 1088,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0221,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 65,
+      "seed": 1105,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0208,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 66,
+      "seed": 1122,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0181,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 67,
+      "seed": 1139,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0219,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 68,
+      "seed": 1156,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0202,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 69,
+      "seed": 1173,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.022,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 70,
+      "seed": 1190,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.019,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 71,
+      "seed": 1207,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0181,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 72,
+      "seed": 1224,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0227,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 73,
+      "seed": 1241,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0191,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 74,
+      "seed": 1258,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0185,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 75,
+      "seed": 1275,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0171,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 76,
+      "seed": 1292,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0187,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 77,
+      "seed": 1309,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0176,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 78,
+      "seed": 1326,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0223,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 79,
+      "seed": 1343,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0178,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 80,
+      "seed": 1360,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0195,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 81,
+      "seed": 1377,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0221,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 82,
+      "seed": 1394,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0184,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 83,
+      "seed": 1411,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0178,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 84,
+      "seed": 1428,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.019,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 85,
+      "seed": 1445,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0215,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 86,
+      "seed": 1462,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0223,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 87,
+      "seed": 1479,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0181,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 88,
+      "seed": 1496,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0175,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 89,
+      "seed": 1513,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0217,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 90,
+      "seed": 1530,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0177,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 91,
+      "seed": 1547,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0229,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 92,
+      "seed": 1564,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0193,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 93,
+      "seed": 1581,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0217,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 94,
+      "seed": 1598,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0188,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 95,
+      "seed": 1615,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0186,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 96,
+      "seed": 1632,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.019,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 97,
+      "seed": 1649,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0207,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 98,
+      "seed": 1666,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0225,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 99,
+      "seed": 1683,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0175,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 100,
+      "seed": 1700,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0197,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 101,
+      "seed": 1717,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0211,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 102,
+      "seed": 1734,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0185,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 103,
+      "seed": 1751,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0196,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 104,
+      "seed": 101771,
+      "attempt": 1,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0206,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 105,
+      "seed": 1785,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0223,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 106,
+      "seed": 1802,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0225,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 107,
+      "seed": 1819,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0201,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 108,
+      "seed": 1836,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0214,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 109,
+      "seed": 1853,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0202,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 110,
+      "seed": 1870,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0184,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 111,
+      "seed": 101890,
+      "attempt": 1,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0199,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 112,
+      "seed": 1904,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0205,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 113,
+      "seed": 1921,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0173,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 114,
+      "seed": 1938,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.021,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 115,
+      "seed": 1955,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0219,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 116,
+      "seed": 1972,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0189,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 117,
+      "seed": 1989,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.019,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 118,
+      "seed": 2006,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0188,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 119,
+      "seed": 2023,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0222,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 120,
+      "seed": 2040,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0186,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 121,
+      "seed": 2057,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.018,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 122,
+      "seed": 2074,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0207,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 123,
+      "seed": 2091,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.02,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 124,
+      "seed": 2108,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0175,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 125,
+      "seed": 2125,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0221,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 126,
+      "seed": 2142,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0205,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 127,
+      "seed": 2159,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0187,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 128,
+      "seed": 2176,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0188,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 129,
+      "seed": 2193,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0178,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 130,
+      "seed": 2210,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0205,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 131,
+      "seed": 2227,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0218,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 132,
+      "seed": 2244,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.018,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 133,
+      "seed": 2261,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.018,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 134,
+      "seed": 102281,
+      "attempt": 1,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0171,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 135,
+      "seed": 102298,
+      "attempt": 1,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0199,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 136,
+      "seed": 2312,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0226,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 137,
+      "seed": 2329,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0228,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 138,
+      "seed": 2346,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0184,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 139,
+      "seed": 2363,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0209,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 140,
+      "seed": 2380,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0201,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 141,
+      "seed": 102400,
+      "attempt": 1,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0184,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 142,
+      "seed": 2414,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0227,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 143,
+      "seed": 2431,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0195,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 144,
+      "seed": 2448,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0187,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 145,
+      "seed": 102468,
+      "attempt": 1,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.02,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 146,
+      "seed": 2482,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0228,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 147,
+      "seed": 2499,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0229,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 148,
+      "seed": 2516,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0187,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 149,
+      "seed": 2533,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0226,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 150,
+      "seed": 2550,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0193,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 151,
+      "seed": 2567,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0181,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 152,
+      "seed": 2584,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0186,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 153,
+      "seed": 2601,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0175,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 154,
+      "seed": 2618,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.017,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 155,
+      "seed": 2635,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0213,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 156,
+      "seed": 2652,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0227,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 157,
+      "seed": 2669,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0188,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 158,
+      "seed": 2686,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0222,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 159,
+      "seed": 2703,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0208,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 160,
+      "seed": 2720,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0215,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 161,
+      "seed": 2737,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0211,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 162,
+      "seed": 2754,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0207,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 163,
+      "seed": 2771,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0205,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 164,
+      "seed": 2788,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.019,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 165,
+      "seed": 2805,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.02,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 166,
+      "seed": 2822,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0174,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 167,
+      "seed": 2839,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0175,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 168,
+      "seed": 2856,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0192,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 169,
+      "seed": 2873,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0191,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 170,
+      "seed": 2890,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0171,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 171,
+      "seed": 2907,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0188,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 172,
+      "seed": 2924,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0199,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 173,
+      "seed": 2941,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0184,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 174,
+      "seed": 2958,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0207,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 175,
+      "seed": 2975,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0211,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 176,
+      "seed": 2992,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0185,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 177,
+      "seed": 3009,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0179,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 178,
+      "seed": 3026,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0225,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 179,
+      "seed": 3043,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0212,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 180,
+      "seed": 3060,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0224,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 181,
+      "seed": 3077,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0176,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 182,
+      "seed": 3094,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0219,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 183,
+      "seed": 3111,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0204,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 184,
+      "seed": 3128,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0219,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 185,
+      "seed": 3145,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0177,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 186,
+      "seed": 3162,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0229,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 187,
+      "seed": 3179,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0176,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 188,
+      "seed": 3196,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0218,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 189,
+      "seed": 3213,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.021,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 190,
+      "seed": 3230,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0214,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 191,
+      "seed": 3247,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0186,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 192,
+      "seed": 3264,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0216,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 193,
+      "seed": 3281,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0208,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 194,
+      "seed": 3298,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0184,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 195,
+      "seed": 3315,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0186,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 196,
+      "seed": 3332,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0185,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 197,
+      "seed": 3349,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0212,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 198,
+      "seed": 3366,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0199,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 199,
+      "seed": 3383,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0194,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 200,
+      "seed": 3400,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0206,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 201,
+      "seed": 3417,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0204,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 202,
+      "seed": 3434,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0205,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 203,
+      "seed": 3451,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0218,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 204,
+      "seed": 3468,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.019,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 205,
+      "seed": 3485,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.022,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 206,
+      "seed": 3502,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0216,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 207,
+      "seed": 3519,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0223,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 208,
+      "seed": 3536,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0192,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 209,
+      "seed": 3553,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0219,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 210,
+      "seed": 3570,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0195,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 211,
+      "seed": 3587,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0218,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 212,
+      "seed": 3604,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0211,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 213,
+      "seed": 3621,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0216,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 214,
+      "seed": 3638,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0226,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 215,
+      "seed": 3655,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0224,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 216,
+      "seed": 3672,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0221,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 217,
+      "seed": 103692,
+      "attempt": 1,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0198,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 218,
+      "seed": 3706,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0178,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 219,
+      "seed": 3723,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0206,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 220,
+      "seed": 3740,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0185,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 221,
+      "seed": 3757,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.022,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 222,
+      "seed": 3774,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0203,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 223,
+      "seed": 3791,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0226,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 224,
+      "seed": 3808,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.021,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 225,
+      "seed": 3825,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0214,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 226,
+      "seed": 3842,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0198,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 227,
+      "seed": 3859,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0175,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 228,
+      "seed": 3876,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0229,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 229,
+      "seed": 3893,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0206,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 230,
+      "seed": 3910,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0204,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 231,
+      "seed": 3927,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0223,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 232,
+      "seed": 3944,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0224,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 233,
+      "seed": 3961,
+      "attempt": 0,
+      "success": true,
+      "target_color": "blue",
+      "target_size": 0.0228,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 234,
+      "seed": 3978,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0183,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 235,
+      "seed": 3995,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0217,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 236,
+      "seed": 4012,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.021,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 237,
+      "seed": 4029,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0217,
+      "has_occluder": true,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 238,
+      "seed": 4046,
+      "attempt": 0,
+      "success": true,
+      "target_color": "red",
+      "target_size": 0.0177,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    },
+    {
+      "episode_index": 239,
+      "seed": 4063,
+      "attempt": 0,
+      "success": true,
+      "target_color": "green",
+      "target_size": 0.0177,
+      "has_occluder": false,
+      "grasp_error": 0.0
+    }
+  ],
+  "notes": [
+    "Simulator only: demonstrations are scripted, not teleoperated.",
+    "Domain randomisation covers pose, colour, size, camera error, occlusion, slip."
+  ]
+}

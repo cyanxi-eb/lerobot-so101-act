@@ -80,6 +80,13 @@ def parse_args() -> argparse.Namespace:
                              "(used for a short fine-tune with a fresh LR schedule)")
     parser.add_argument("--lr-min", type=float, default=0.0,
                         help="final LR of the cosine schedule (fraction of --lr)")
+    parser.add_argument("--augment", action="store_true",
+                        help="photometric/translation augmentation on training batches")
+    parser.add_argument("--device", default="auto", choices=["auto", "cpu", "cuda"])
+    parser.add_argument("--d-model", type=int, default=128)
+    parser.add_argument("--n-heads", type=int, default=4)
+    parser.add_argument("--n-layers", type=int, default=2)
+    parser.add_argument("--cnn-width", type=int, default=32)
     parser.add_argument("--smoke", action="store_true",
                         help="tiny run for CI: 3 episodes, 2 epochs, <=2 minutes")
     return parser.parse_args()
@@ -122,6 +129,12 @@ def main() -> int:
         image_size=args.image_size,
         chunk_size=args.chunk_size,
         kl_weight=args.kl_weight,
+        d_model=args.d_model,
+        n_heads=args.n_heads,
+        n_enc_layers=args.n_layers,
+        n_dec_layers=args.n_layers,
+        cnn_channels=(args.cnn_width, args.cnn_width * 2,
+                      args.cnn_width * 2, args.cnn_width * 2),
     )
     model = ACTPolicy(config)
     if args.init_from:
@@ -131,7 +144,12 @@ def main() -> int:
         model.load_state_dict(init.policy.state_dict())
         print(f"initialised weights from {args.init_from}", flush=True)
     n_params = model.n_parameters()
-    device = torch.device("cpu")
+    if args.device == "auto":
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    else:
+        device = torch.device(args.device)
+    if device.type == "cuda":
+        torch.backends.cudnn.benchmark = True
     model.to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr,
                                   weight_decay=args.weight_decay)
@@ -178,7 +196,7 @@ def main() -> int:
         n_batches = 0
         epoch_started = time.perf_counter()
         for batch_idx in make_batches(train_idx, args.batch_size, rng):
-            images, state, target, mask = prepare_batch(data, batch_idx, device)
+            images, state, target, mask = prepare_batch(data, batch_idx, device, augment=args.augment)
             pred, mu, logvar = model(images, state, target)
             loss, metrics = act_loss(pred, target, mask, mu, logvar,
                                      kl_weight=args.kl_weight)
@@ -265,7 +283,7 @@ def main() -> int:
         train_minutes=round(train_seconds / 60.0, 2),
         steps_per_second=round(global_step / max(train_seconds, 1e-9), 3),
         torch_threads=int(torch.get_num_threads()),
-        device="cpu",
+        device=str(device),
         rollout_history=rollout_history,
     )
     print(f"done: {epochs_done} epochs, {train_seconds/60:.1f} min, "

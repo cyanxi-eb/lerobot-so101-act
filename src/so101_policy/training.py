@@ -85,14 +85,41 @@ def make_batches(indices: np.ndarray, batch_size: int, rng: np.random.Generator 
         yield idx[start:start + batch_size]
 
 
-def prepare_batch(data: dict, batch_idx, device) -> tuple[torch.Tensor, torch.Tensor,
-                                                          torch.Tensor, torch.Tensor]:
+def augment_batch(images: torch.Tensor) -> torch.Tensor:
+    """Photometric + small-translation augmentation for training batches.
+
+    Kept intentionally mild: per-channel colour gain, brightness / contrast,
+    a small pixel shift and a little Gaussian noise.  Validation and
+    evaluation never take this path (``augment`` defaults to False).
+    """
+    b = images.shape[0]
+    dev = images.device
+    gain = torch.rand(b, 1, 3, 1, 1, device=dev) * 0.35 + 0.825
+    images = images * gain
+    bright = torch.rand(b, 1, 1, 1, 1, device=dev) * 0.3 + 0.85
+    images = images * bright
+    mean = images.mean(dim=(2, 3, 4), keepdim=True)
+    contrast = torch.rand(b, 1, 1, 1, 1, device=dev) * 0.3 + 0.85
+    images = (images - mean) * contrast + mean
+    dx = int(torch.randint(-3, 4, (1,)).item())
+    dy = int(torch.randint(-3, 4, (1,)).item())
+    if dx or dy:
+        images = torch.roll(images, shifts=(dy, dx), dims=(3, 4))
+    images = images + torch.randn_like(images) * 0.015
+    return images.clamp_(0.0, 1.0)
+
+
+def prepare_batch(data: dict, batch_idx, device,
+                  augment: bool = False) -> tuple[torch.Tensor, torch.Tensor,
+                                                  torch.Tensor, torch.Tensor]:
     """Build ``(images, state, target_chunk, mask)`` tensors for one batch."""
     batch_idx = np.asarray(batch_idx, dtype=np.int64)
     front = data["front"][batch_idx]
     wrist = data["wrist"][batch_idx]
     imgs = np.stack([front, wrist], axis=1)  # (B, 2, H, W, 3)
     images = torch.from_numpy(imgs).to(device).permute(0, 1, 4, 2, 3).float().div_(255.0)
+    if augment:
+        images = augment_batch(images)
     state = torch.from_numpy(data["state"][batch_idx]).to(device)
     target = torch.from_numpy(data["chunks"][batch_idx]).to(device)
     mask = torch.from_numpy(data["mask"][batch_idx]).to(device)

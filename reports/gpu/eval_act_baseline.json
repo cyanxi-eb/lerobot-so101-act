@@ -1,0 +1,229 @@
+{
+  "policy": "act",
+  "policy_type": "act",
+  "checkpoint": {
+    "path": "checkpoints/act.pt",
+    "policy_type": "act",
+    "n_parameters": 680664,
+    "bytes": 2757813,
+    "metadata": {
+      "epoch": 8,
+      "val_l1": 0.13334,
+      "rollout_success_rate": 0.5,
+      "trained_on": "simulated scripted demonstrations (no teleop)",
+      "train_frames": 4320,
+      "val_frames": 480,
+      "elapsed_seconds": 857.5
+    }
+  },
+  "protocol": {
+    "simulator": "so101_sim (kinematic, 96x96 front + wrist cameras)",
+    "control_hz": 7.5,
+    "max_steps": 60,
+    "replan_interval": 5,
+    "ensemble_decay": 0.0,
+    "seen_seeds": [
+      3000,
+      3001,
+      3002,
+      3003,
+      3004,
+      3005,
+      3006,
+      3007,
+      3008,
+      3009,
+      3010,
+      3011,
+      3012,
+      3013,
+      3014,
+      3015,
+      3016,
+      3017,
+      3018,
+      3019
+    ],
+    "unseen_seeds": [
+      4100,
+      4101,
+      4102,
+      4103,
+      4104,
+      4105,
+      4106,
+      4107,
+      4108,
+      4109,
+      4110,
+      4111,
+      4112,
+      4113,
+      4114,
+      4115,
+      4116,
+      4117,
+      4118,
+      4119
+    ],
+    "lang_seeds": [
+      3200,
+      3201,
+      3202,
+      3203,
+      3204,
+      3205,
+      3206,
+      3207,
+      3208,
+      3209,
+      3210,
+      3211,
+      3212,
+      3213,
+      3214,
+      3215,
+      3216,
+      3217,
+      3218,
+      3219
+    ],
+    "success_definition": "instructed block inside the box after release"
+  },
+  "splits": {
+    "seen": {
+      "trials": 20,
+      "successes": 8,
+      "success_rate": 0.4,
+      "failures": {
+        "timeout": 1,
+        "grasp_miss": 10,
+        "misplace": 1
+      },
+      "grasp_trials": 9,
+      "grounded_grasps": 9,
+      "grounding_accuracy": 1.0,
+      "cycle_seconds_mean": 7.68,
+      "cycle_seconds_min": 6.667,
+      "cycle_seconds_max": 8.0,
+      "wall_seconds_mean": 0.225,
+      "wall_seconds_min": 0.133,
+      "wall_seconds_max": 0.747,
+      "latency_ms_mean": 4.087,
+      "latency_ms_p50": 1.655,
+      "latency_ms_p95": 5.1,
+      "by_color": {
+        "red": {
+          "trials": 9,
+          "success": 5
+        },
+        "blue": {
+          "trials": 4,
+          "success": 0
+        },
+        "green": {
+          "trials": 7,
+          "success": 3
+        }
+      },
+      "wrong_object_in_box": 0
+    },
+    "unseen": {
+      "trials": 20,
+      "successes": 3,
+      "success_rate": 0.15,
+      "failures": {
+        "grasp_miss": 13,
+        "timeout": 4
+      },
+      "grasp_trials": 4,
+      "grounded_grasps": 4,
+      "grounding_accuracy": 1.0,
+      "cycle_seconds_mean": 7.973,
+      "cycle_seconds_min": 7.467,
+      "cycle_seconds_max": 8.0,
+      "wall_seconds_mean": 0.161,
+      "wall_seconds_min": 0.15,
+      "wall_seconds_max": 0.173,
+      "latency_ms_mean": 1.617,
+      "latency_ms_p50": 1.603,
+      "latency_ms_p95": 1.672,
+      "by_color": {
+        "purple": {
+          "trials": 15,
+          "success": 1
+        },
+        "yellow": {
+          "trials": 5,
+          "success": 2
+        }
+      },
+      "wrong_object_in_box": 0
+    }
+  },
+  "failure_cases": [
+    {
+      "seed": 3001,
+      "split": "seen",
+      "failure": "timeout",
+      "target_color": "red",
+      "target_size": 0.0212,
+      "has_occluder": true,
+      "release_error_m": null,
+      "wrong_object_in_box": false,
+      "description": "seed 3001, failure=timeout, target=red (half-size 0.0212 m), occluder=True, steps=60"
+    },
+    {
+      "seed": 3002,
+      "split": "seen",
+      "failure": "grasp_miss",
+      "target_color": "blue",
+      "target_size": 0.0199,
+      "has_occluder": true,
+      "release_error_m": null,
+      "wrong_object_in_box": false,
+      "description": "seed 3002, failure=grasp_miss, target=blue (half-size 0.0199 m), occluder=True, steps=60"
+    },
+    {
+      "seed": 3003,
+      "split": "seen",
+      "failure": "grasp_miss",
+      "target_color": "blue",
+      "target_size": 0.0194,
+      "has_occluder": true,
+      "release_error_m": null,
+      "wrong_object_in_box": false,
+      "description": "seed 3003, failure=grasp_miss, target=blue (half-size 0.0194 m), occluder=True, steps=60"
+    },
+    {
+      "seed": 3005,
+      "split": "seen",
+      "failure": "grasp_miss",
+      "target_color": "blue",
+      "target_size": 0.0206,
+      "has_occluder": true,
+      "release_error_m": null,
+      "wrong_object_in_box": false,
+      "description": "seed 3005, failure=grasp_miss, target=blue (half-size 0.0206 m), occluder=True, steps=60"
+    },
+    {
+      "seed": 3006,
+      "split": "seen",
+      "failure": "grasp_miss",
+      "target_color": "green",
+      "target_size": 0.0206,
+      "has_occluder": false,
+      "release_error_m": null,
+      "wrong_object_in_box": false,
+      "description": "seed 3006, failure=grasp_miss, target=green (half-size 0.0206 m), occluder=False, steps=60"
+    }
+  ],
+  "images": {
+    "failures": "reports/eval_act_failures.png"
+  },
+  "failure_mode_counts": {
+    "timeout": 5,
+    "grasp_miss": 23,
+    "misplace": 1
+  }
+}
